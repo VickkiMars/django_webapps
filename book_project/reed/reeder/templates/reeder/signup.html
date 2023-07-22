@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Trirong">
+  <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <title>Reed | Sign Up for Free</title>
+</head>
+
+<body>
+  <div>
+    <a href = "" ><img src="{% static 'images/reed.png' %}" style="width: 5%;height: 5%;"> </a>
+  </div>
+
+  <div class="card">
+    <div class="message">
+        <style>
+            h5{
+                color:white;
+            }
+        </style>
+        {% for message in messages %}
+        <h5>{{message}}</h5>
+        {% endfor %}
+      </div>
+    </div>
+
+<div class="container mt-3">
+  <form action="#" method="POST">
+    {% csrf_token %}
+
+    <h2 style="font-family:dubai;">Signup to join other<i> Reed</i>ers!</h2><hr>
+
+    <div class="d-grip gap-2 mx-auto ">
+      <button class="btn btn-danger mt-3 col-6"  type="button">Signup with Google</button>
+      <button class="btn btn-primary mt-3 col-6" type="button">Signup with Facebook</button>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="fname">First Name</label>
+      <input type="fname" class="form-control" id="fname" placeholder="First Name" name="fname">
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="lname">Last Name</label>
+      <input type="lname" class="form-control" id="lname" placeholder="Last Name" name="lname">
+    </div>
+
+    <div class="form-group mt-3 ">
+      <label for="email" class="font-family-dubai">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Create a password" name="password">
+      <div id="passwordHelpBlock" class="form-text">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+      </div>
+    </div>
+
+    <div class="col-sm-12 mt-3">
+      <label for="password" class="form-label">Confirm your Password</label>
+      <input type="password" class="form-control" name="confirm" placeholder="Confirm your password">
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="uname">What should we call you?</label>
+      <input type="text" class="form-control" id="uname" placeholder="username" name="username">
+    </div>
+
+    <div class="form-radio mt-3">
+      <label for="gender"> What's your gender </label><br>
+      <input type="checkbox" id= "gender" name="mgender" value="Male"> Male
+      <input type="checkbox" id="gender" name="fgender" value="Female"> Female
+    </div>
+
+    <div class="form-group mt-3">
+      <p>Already have an account? <a href = "signin"> Log in. </a></p>
+    </div>
+
+    <div class="form-group form-check mt-4">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-secondary mt-2 mb-2 col-4">Sign up</button>    
+  </form>
+</div>
+</body>
+</html>

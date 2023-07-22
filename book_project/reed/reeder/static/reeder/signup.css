@@ -1,0 +1,30 @@
+
+a{
+    font-family: century gothic;
+}
+a.Google { 
+    color: black;
+    background-color: rgba(255, 26, 26, 0.19);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    width: 90px;
+}
+
+a:hover{
+    color: black;
+    text-decoration: none;
+    font-family:century gothic;
+    font-size: 19px;
+}
+
+a.Facebook{
+    color: black;
+    background-color: rgba(0, 102, 255, 0.19);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    width: 110px;
+}

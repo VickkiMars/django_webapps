@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+         <link rel="stylesheet" type="text/css" href="{% static 'text/upload.css' %} ">
+    <title>Reed | Upload Book</title>
+</head>
+
+
+
+<body>
+    <form action="/upload", method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+           
+        <div class="bg-light card mx-3 my-3">
+            <div class="logo">
+                <img src="{% static 'images/reed.png' %}">  
+            </div>
+            
+            <div class="form-group mx-2 my-2">
+                <h4 class="button">Upload your book</h4>
+                <h6 class="link">Not yet a Reeder? <a href="/signup">Sign Up</a></h6>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Upload your Book</label>
+                    <input type="file" class="form-control form-control-sm" id="book" name="book_upload">
+                </div>
+
+                <div class="thumbnail mt-3">
+                    <label for="thumbnail">Upload your Thumbnail</label>
+                    <input type="file" class="form-control form-control-sm" id="thumbnail" name="thumbnail_upload">
+                </div>
+
+                <div class="description mt-3">
+                    <label for="description">Enter a captivating description (1000 characters max)</label>
+                    <textarea type="text" class="form-control" rows="5" id="description" placeholder="Description" name="description"></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="pub_date mt-3">
+                            <label for="pub-date">Publication Date</label>
+                            <input type="date" class="form-control" placeholder="Publication Date" id="pub_date" name="pub_date">
+                        </div>
+
+                        <div class="author mt-3">
+                            <label for="author">Author</label>
+                            <input type="text" class="form-control" placeholder="Author's name" id="author" name="author">
+                        </div>
+
+                        <div class="title mt-3">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" placeholder="Title" id="title" name="title">
+                        </div>
+
+                        <div class="press mt-3">
+                            <label for="press">Publishing House</label>
+                            <input type="text" class="form-control" placeholder="Publishing House" id="press" name="press">
+                        </div>
+
+                        <div class="language mt-3">
+                            <label for="lang">Language</label>
+                            <input type="text" class="form-control" placeholder="Language" id="lang" name="lang">
+                        </div>
+
+                        <div class="category mt-3">
+                            <label for="category">Category</label>
+                            <select>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Sci-fi">Sci-Fi</option>
+                                <option value="Science">Science</option>
+                                <option value="Psychology">Psychology</option>
+                                <option value="Health">Health</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Motivational">Motivational</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Mystery">Mystery</option>
+                                <option value="Classic">Classic</option>
+                                <option value="Biography">Biography</option>
+                                <option value="Fantasy">Fantasy</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Children">Children</option>
+                                <option value="Crime">Crime</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                <input class="submit bg-success text-white mt-3 border border-success rounded" type="submit" name="submit" id="submit">
+                
+            </div>
+        </div>
+    
+
+    </form>
+
+</body>
+</html>

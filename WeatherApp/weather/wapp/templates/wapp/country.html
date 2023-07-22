@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <title>{{country_data.name}}</title>
+</head>
+<body>
+    <div class="container mt-3 ml-3 mr-3">
+        <div class="card rounded-rounded">
+            <div class="main mx-3">
+                <h1>Weather in {{country_data.name}}</h1>
+                    
+            </div>
+            <div class="card-body">
+
+                <div class="card bg-dark text-white">
+                    <p class="mx-3 mt-2">Country Code</p><hr class="mt-0"><h4 class="mt-0 mx-3">{{country_data.country_code}}</h4>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-secondary text-white">
+                    <h5 class="main mx-3 mt-2">Temperature</h5><p class="mx-3">{{country_data.temp}} °F</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-dark text-white">
+                    <p class="mx-3 mt-2">Pressure</p><hr class="mt-0"><h4 class="mt-0 mx-3">{{country_data.pressure}}</h4>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-secondary text-white">
+                    <h5 class="main mx-3 mt-2">Humidity</h5><p class="mx-3">{{country_data.humidity}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-dark text-white">
+                    <p class="mx-3 mt-2">Wind Speed</p><hr class="mt-0"><h4 class="mt-0 mx-3">{{country_data.wind_speed}}</h4>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-secondary text-white">
+                    <h5 class="main mx-3 mt-2">Clouds</h5><p class="mx-3">{{country_data.clouds_description}}</p>
+                </div><h1 class="mt-1"></h1>    
+            </div>
+            <hr>
+
+            <div class="main mx-3">
+                <h1>Country Details</h1>
+            </div>
+            <div class="card-body">
+                <div class="card bg-secondary text-white">
+                <h5 class="main mx-3 mt-2">City Name</h5><p class="mx-3">{{country_data.name}}</p>
+                </div><h1 class="mt-1"></h1>
+
+            
+            <div class="card-body">
+                <div class="card bg-secondary text-white">
+                <h5 class="main mx-3 mt-2">Coordinates </h5><p class="mx-3">{{country_data.coordinate}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-dark text-white">
+                    <h5 class="mx-3 mt-2">Country Name</h5><p class="mx-3">{{country_details.name}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-secondary text-white">
+                    <h5 class="mx-3 mt-2">Capital</h5><p class="mx-3">{{country_details.capital}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-dark text-white">
+                    <h5 class="mx-3 mt-2">Continent / Region</h5><p class="mx-3">{{country_details.continent}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-secondary text-white">
+                    <h5 class="mx-3 mt-2">Sub region</h5><p class="mx-3">{{country_details.subregion}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-dark text-white">
+                    <h5 class="mx-3 mt-2">Independent</h5><p class="mx-3">{{country_details.independent}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-secondary text-white">
+                    <h5 class="mx-3 mt-2">United Nations Member</h5><p class="mx-3">{{country_details.UN_member}}</p>
+                </div><h1 class="mt-1"></h1>
+                
+                <div class="card bg-dark text-white">
+                    <h5 class="mx-3 mt-2">Currency</h5><p class="mx-3">{{country_details.currency_symbol}}{{cc}}</p>
+                </div><h1 class="mt-1"></h1>
+                
+                <div class="card bg-secondary text-white">
+                    <h5 class="mx-3 mt-2">Timezone</h5><p class="mx-3">{{country_details.timezones}}</p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-dark text-white">
+                    <h5 class="mx-3 mt-2">Google Maps</h5><p class="mx-3"><a class="text-white" href={{country_details.Map_link}}>Map of {{country_details.name}}</a></p>
+                </div><h1 class="mt-1"></h1>
+
+                <div class="card bg-secondary text-white">
+                    <h5 class="mx-3 mt-2">Wikipedia</h5><p class="mx-3"><a class="text-white" href={{country_details.wiki}}>{{country_details.name}} Wiki</a></p>
+                </div><h1 class="mt-1"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

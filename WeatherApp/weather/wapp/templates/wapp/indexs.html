@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  body{
+    padding-left: 50%;
+  }
+  div.card{
+      margin-top: 2%;
+      margin-left: 2%;
+  }
+  div.card:hover{
+      margin-top: 3%;
+      margin-left: 3%;
+      /* box-shadow: 0px, 6px, 2px, 4px red; */
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity=
+"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+         crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <title>Weather App</title>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand"><strong><em>Weather App</em></strong></a>
+    <form class="form-inline" action="country" method="POST">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="city_name">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  <div class="main mt-3 mx-3 my-3 mb-3">
+    <div class="row">
+      {% for weather in weather_data %}
+      <!-- <figure class="image is-50x50" style="width:50px; height:50px;">
+        <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="Image">
+      </figure> -->
+      <div class="card bg-secondary" style="color:white; width: 18rem; margin-top:1%; margin-left:2%;">
+        <!-- url('https://amymhaddad.s3.amazonaws.com/oriental-tiles.png') -->
+          <div class="card-body">
+            <h5 class="card-title">{{weather.name}}</h5>
+            <h6 class="card-subtitle mb-4 ">{{weather.country_code}}</h6>
+            <p class="card-text">{{weather.temp}}°F</p>
+            <h4>{{weather.description}}</h4>
+            <h6 class="card-subtitle mb-2 ">Pressure: {{weather.pressure}} </h6>
+            <h6 class="card-subtitle mb-2 ">Humidity: {{weather.humidity}} </h6>
+            <h6 class="card-subtitle mb-2"> {{ time }} </h6>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+div.card{
+    margin-top: 1%;
+    margin-left: 1%;
+    background-color: white;
+}
+div.card:hover{
+    margin-top: 2%;
+    margin-left: 3%;
+    /* box-shadow: 0px, 6px, 2px, 4px red; */
+}
+
+a {
+    text-decoration: none;
+
+}
